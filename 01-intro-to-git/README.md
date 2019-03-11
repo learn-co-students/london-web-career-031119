@@ -4,7 +4,7 @@
 
 ### Getting started with Git
 
-- [ ] Cloning a repo
+- [x] Cloning a repo
 - [ ] Staging our changes
 - [ ] Commit our staged files
 - [ ] Push changes remotely
