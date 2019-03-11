@@ -5,8 +5,8 @@
 ### Getting started with Git
 
 - [x] Cloning a repo
-- [ ] Staging our changes
-- [ ] Commit our staged files
+- [x] Staging our changes
+- [x] Commit our staged files
 - [ ] Push changes remotely
 
 ### Navigating history
