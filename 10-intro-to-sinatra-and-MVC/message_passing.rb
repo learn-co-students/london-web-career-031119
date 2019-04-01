@@ -72,6 +72,7 @@ run
 
 
 # def router(route, parameters={})
+#   system("clear")
 #   case route
 #   when 1
 #     puts "What's your name, bud?"
