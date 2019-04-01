@@ -15,6 +15,7 @@
 ## Outline
 
 - [ ] How and why we use the MVC pattern
+
 - [ ] How CRUD actions map to RESTful Routing
   - Deliverables! Routing!
 - [ ] Define _"convention over configuration"_
@@ -34,28 +35,63 @@
 ### New!
 
 - *Model*:
-- *View*:
+  - Classes, tables 
 - *Controller*:
+  - Middle-man - in charge of relating your views to your model
+- *View*:
+  - `puts`, HTML
+- HTTP Verbs
+  - GET, POST, DELETE, PUTS, PATCH
+
+- CRUD in SQL
+  - Create
+    - CREATE, INSERT
+  - Read
+    - SELECT
+  - Update
+    - UPDATE
+  - Delete
+    - DESTROY, DROP
+
+- CRUD in AR
+  - Create
+    - Object.new, Object.create
+  - Read
+    - Object.find
+  - Update
+    - object.update
+  - Delete
+    - object.destroy
+
+- CRUD in HTTP
+  - Create
+    - POST
+  - Read
+    - GET
+  - Update
+    - PATCH, PUTS
+  - Delete
+    - DELETE
+
 - *RESTful Routing (REST)*:
-- *convention over configuration*:
+  - REpresentational State Transfer
+  - Defines a standard way of writing URLs
 
-## Deliverables
+7 RESTful Routes
+- CRUD
+  - Read
+    - GET /posts
+    - GET /posts/:id
+  - Create
+    - GET /posts/new
+    - POST /posts
+  - Update
+    - GET /posts/:id/edit
+    - PUTS/PATCH /posts/:id
+  - Delete
+<!--     - GET /posts/:id/delete-->    
+    - DELETE /posts/:id
 
-For each deliverable what is the route?
-
-- view information on an individual book
-
-
-- view all books
-
-
-- create a new book
-
-
-- edit an existing book
-
-
-- delete an existing book
 
 
 
