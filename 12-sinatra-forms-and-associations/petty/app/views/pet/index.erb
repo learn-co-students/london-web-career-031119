@@ -1,0 +1,20 @@
+<h1>Pets Index</h1>
+
+<ul>
+  <% @pets.each do |pet| %>
+    <li>
+      <strong>
+        <a href="/pets/<%= pet.id%>"><%= pet.name %></a>
+      <strong>
+      <a href="/pets/<%= pet.id%>/edit"><button>Edit</button></a>
+
+      <form style="display: inline-block;" action="/pets/<%= pet.id%>" method="post">
+        <input type="hidden", name="_method" value="delete"/>
+        <div>
+          <input type="submit" value="DESTROY!">
+        </div>
+      </form>
+  </li>
+  <% end %>
+</ul>
+
