@@ -3,3 +3,5 @@
 <h4>Age: <%= @pet.age %></h4>
 <h4>Color: <%= @pet.color %></h4>
 
+<a href="/owners/<%= @pet.owner.id%>" ><h4>Owner: <%= @pet.owner.name %> </h4></a>
+

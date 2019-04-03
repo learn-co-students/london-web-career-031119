@@ -8,8 +8,9 @@ class ApplicationController < Sinatra::Base
     set :method_override, true
   end
 
+
   get "/" do
-    erb :"pet/welcome"
+    erb :welcome
   end
 
   get "/pets" do
@@ -18,12 +19,18 @@ class ApplicationController < Sinatra::Base
   end
 
   get "/pets/new" do
+    @owners = Owner.all
     erb :"pet/new"
   end
 
   get "/pets/:id" do
     @pet = Pet.find(params[:id])
     erb :"pet/show"
+  end
+
+  get "/owners/:id" do
+    @owner = Owner.find(params[:id])
+    erb :"owner/show"
   end
 
   post "/pets" do
