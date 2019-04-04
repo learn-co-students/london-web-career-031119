@@ -1,7 +1,9 @@
 <h1>Pet Index</h1>
 
 <h1 style="color:red;">
-  <%= @error if @error %>
+  <% errif @error %>
+    <%= @error %>
+  <% end %>
  </h1>
 <a href="/pets?category=dog"><button>Dogs</button></a>
 <a href="/pets?category=cat"><button>Cats</button></a>
