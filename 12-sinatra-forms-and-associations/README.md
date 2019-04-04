@@ -13,3 +13,9 @@ Sinatra Forms and Associations
 - Build out a one-to-many relationship application.
 - Do the create and edit paths for the one that `belongs_to`
 
+
+Pet
+  belongs_to owner
+  has_many clothes
+  has_many toys
+  

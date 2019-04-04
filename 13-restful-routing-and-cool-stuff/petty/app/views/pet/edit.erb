@@ -1,0 +1,31 @@
+<h1>EDIT PAGE</h1>
+
+<form action="/pets/<%= @pet.id%>" method="post">
+  <input type="hidden", name="_method" value="patch"/>
+  <div>
+    <label for="name">Enter your pet's name: </label>
+    <input type="text" name="pet[name]" id="name" value=<%= @pet.name%>>
+  </div>
+  <div>
+    <label for="species">Enter your pet's species: </label>
+    <input type="text" name="pet[species]" id="species" value=<%= @pet.species%>>
+  </div>
+  <div>
+    <label for="breed">Enter your pet's breed: </label>
+    <input type="text" name="pet[breed]" id="breed" value=<%= @pet.breed%>>
+  </div>
+  <div>
+    <label for="color">Enter your pet's color: </label>
+    <input type="text" name="pet[color]" id="color" value=<%= @pet.color%>>
+  </div>
+  <div>
+    <label for="age">Enter your pet's age: </label>
+    <input type="number" name="pet[age]" id="age" value=<%= @pet.age%>>
+  </div>
+  <div>
+    <input type="submit" value="Edit Pet!">
+  </div>
+</form>
+
+
+

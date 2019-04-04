@@ -1,0 +1,25 @@
+<h1>Pet Index</h1>
+
+<h1 style="color:red;">
+  <%= @error if @error %>
+ </h1>
+<a href="/pets?category=dog"><button>Dogs</button></a>
+<a href="/pets?category=cat"><button>Cats</button></a>
+<ul>
+  <% @pets.each do |pet| %>
+    <li>
+      <strong>
+        <a href="/pets/<%= pet.id%>"><%= pet.name %></a>
+      <strong>
+      <a href="/pets/<%= pet.id%>/edit"><button>Edit</button></a>
+
+      <form style="display: inline-block;" action="/pets/<%= pet.id%>" method="post">
+        <input type="hidden", name="_method" value="delete"/>
+        <div>
+          <input type="submit" value="DESTROY!">
+        </div>
+      </form>
+  </li>
+  <% end %>
+</ul>
+

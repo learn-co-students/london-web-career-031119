@@ -1,0 +1,53 @@
+<h1><%= @owner.name %> </h1>
+<h4><%= @owner.age %> </h4>
+<blockquote><%= @owner.catchphrase %> </blockquote>
+
+<ul>
+  <% @owner.pets.each do |pet| %>
+    <li>
+      <strong>
+        <a href="/pets/<%= pet.id%>"><%= pet.name %></a>
+      <strong>
+      <a href="/pets/<%= pet.id%>/edit"><button>Edit</button></a>
+
+      <form style="display: inline-block;" action="/pets/<%= pet.id%>" method="post">
+        <input type="hidden", name="_method" value="delete"/>
+        <div>
+          <input type="submit" value="DESTROY!">
+        </div>
+      </form>
+  </li>
+  <% end %>
+</ul>
+
+
+<h1>Make a pet!</h1>
+<form action="/pets" method="post">
+  <div>
+    <label for="name">Enter your pet's name: </label>
+    <input type="text" name="name" id="name">
+  </div>
+  <div>
+    <label for="species">Enter your pet's species: </label>
+    <input type="text" name="species" id="species">
+  </div>
+  <div>
+    <label for="breed">Enter your pet's breed: </label>
+    <input type="text" name="breed" id="breed">
+  </div>
+  <div>
+    <label for="color">Enter your pet's color: </label>
+    <input type="text" name="color" id="color">
+  </div>
+  <div>
+    <label for="age">Enter your pet's age: </label>
+    <input type="number" name="age" id="age">
+  </div>
+
+  <input type="hidden" name="owner_id" value=<%= @owner.id %>>
+
+
+  <div>
+    <input type="submit" value="Create Pet!">
+  </div>
+</form>
