@@ -1,0 +1,49 @@
+<h1>New Player</h1>
+
+<h1>OLD WAY: NOT SECURE</h1>
+<form action="/players" method="POST">
+  <label for="name">Name: </label>
+  <input id="name" name="name" />
+  <br>
+
+  <label for="age">Age: </label>
+  <input type="number" id="age" name="age" />
+  <br>
+
+  <label for="bio">Bio: </label>
+  <input id="bio" name="bio" />
+  <br>
+
+  <label for="special_skill">Special Skill: </label>
+  <input id="special_skill" name="special_skill" />
+  <br>
+
+  <input type="submit" value="Create a player!">
+</form>
+
+<h1>FORM FOR</h1>
+<%= form_for :player, url: players_path do |f|%>
+  <%= f.label :name %>
+  <%= f.text_field :name %>
+  <%= f.label :age %>
+  <%= f.number_field :age %>
+  <%= f.label :bio %>
+  <%= f.text_field :bio %>
+  <%= f.label :special_skill %>
+  <%= f.text_field :special_skill %>
+  <%= f.submit "Create Player!" %>
+<% end %>
+
+
+<h1>FORM TAG</h1>
+<%= form_tag players_path do %>
+  <%= label_tag :name %>
+  <%= text_field_tag :name%>
+  <%= label_tag :age %>
+  <%= number_field_tag :age, nil, placeholder: "Enter your age" %>
+  <%= label_tag :bio %>
+  <%= text_field_tag :bio, nil, placeholder: "Enter your bio" %>
+  <%= label_tag :special_skill %>
+  <%= text_field_tag :special_skill, nil, placeholder: "Enter your special skill" %>
+  <%= submit_tag "Create Player!" %>
+<% end %>
