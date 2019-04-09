@@ -1,0 +1,22 @@
+<h1><%= @player.name %></h1>
+<strong>Age: <%= @player.age %></strong>
+<br>
+<strong>Special Skill: <%= @player.special_skill %></strong>
+<p>Bio: <%= @player.bio %></p>
+
+<% @player.games.each do |game| %>
+  <%= game.room %>
+<% end %>
+
+<%= button_to "Delete Player", {},  {method: :delete}%>
+
+
+<%= form_for @player_game do |f| %>
+  <%= f.hidden_field :player_id, value: @player.id%>
+  <%= f.label :game_id%>
+  <%= f.collection_select :game_id, @games, :id, :room%>
+  <%= f.submit %>
+<% end %>
+
+<!-- <a href="/players">Back to main!</a> -->
+<%= link_to "Back to main!", players_path%>

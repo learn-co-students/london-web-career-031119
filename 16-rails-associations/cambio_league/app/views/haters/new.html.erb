@@ -1,0 +1,9 @@
+<h1>NEW HATER</h1>
+
+<%= form_for @hater do |f| %>
+  <%= f.label :name%>
+  <%= f.text_field :name%>
+  <%= f.label :player_id %>
+  <%= f.collection_select :player_id, @players, :id, :name%>
+  <%= f.submit %>
+<% end %>

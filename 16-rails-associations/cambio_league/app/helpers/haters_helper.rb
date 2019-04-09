@@ -1,0 +1,2 @@
+module HatersHelper
+end
