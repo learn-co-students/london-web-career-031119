@@ -4,5 +4,7 @@
 <strong>Special Skill: <%= @player.special_skill %></strong>
 <p>Bio: <%= @player.bio %></p>
 
+<%= button_to "Delete Player", {},  {method: :delete}%>
+
 <!-- <a href="/players">Back to main!</a> -->
 <%= link_to "Back to main!", players_path%>

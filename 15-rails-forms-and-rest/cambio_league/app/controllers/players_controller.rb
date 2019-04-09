@@ -12,11 +12,31 @@ class PlayersController < ApplicationController
   end
 
   def new
+    @player = Player.new
     # render :new
   end
 
   def create
-    Player.create(player_params)
+    player = Player.create(player_params)
+
+    # redirect_to "/players/#{player.id}"
+    # redirect_to player_path(player)
+    redirect_to player
+  end
+
+  def edit
+    @player = Player.find(params[:id])
+  end
+
+  def destroy
+    @player = Player.find(params[:id])
+    @player.destroy
+
+    redirect_to players_path
+  end
+
+  def update
+    byebug
   end
 
   def player_params
