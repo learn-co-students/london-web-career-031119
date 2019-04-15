@@ -2,7 +2,26 @@
 
 <h4>Your Cart: </h4>
 <ol>
-  <li>🤔</li>
+  <% @cart_nachos.each do |n| %>
+    <li><%= n.name %>
+      <%= button_to "Remove from cart",
+          {
+            action: "remove_from_cart", 
+            controller: "cart",
+            id: n.id
+          }, 
+          method: "delete" 
+  %>
+    </li>
+
+  <% end %>
+  <%= button_to "Clear cart",
+          {
+            action: "clear_cart", 
+            controller: "cart"
+          }, 
+          method: "delete" 
+  %>
 </ol>
 
 <hr>
@@ -13,8 +32,13 @@
       <%= link_to nacho.name, nacho %>
       $<%= nacho.price %>
       <%=
-        button_to "Add To Cart",
-        "/where/to/hmmmmmm"
+        button_to "Add To Cart", 
+          {
+            action: "add_to_cart", 
+            controller: "cart",
+            id: nacho.id
+          }, 
+          method: "patch" 
       %>
     </li>
   </ul>

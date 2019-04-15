@@ -5,10 +5,10 @@
 ## SWBATs
 
 - [ ] Describe the stateless nature of HTTP
-- [ ] Understand the difference between flash and session
+- [ ] Understand the difference between `flash` and `session`
   - [ ] Decide when to use what
 - [ ] Use sessions to make HTTP stateful
-  - [ ] Add and remove information from the session
+  - [ ] Add and remove information from the `session`
 - [ ] Understand how cookies enable sessions to work
   - [ ] Use cookies to store data on the browser
   - [ ] Cookies are key-value pairs with some extra info
