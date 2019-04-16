@@ -1,0 +1,26 @@
+<h1><%= @post.title %></h1>
+<h3>By: <%= @post.author.username %></h3>
+<p><%= @post.content %></p>
+
+
+<%= flash[:notice] if flash[:notice]%>
+
+<h4>Comments: </h4>
+
+<% if @current_user%>
+  <%= form_for @comment, url: add_comment_path(@post) do |f|%>
+    <%= f.label :content%>
+    <%= f.text_field :content%>
+    <%= f.submit%>
+  <% end%>
+<% end  %>
+
+<ol> 
+  <% @post.comments.each do |comment| %>
+   <li>
+      <%= comment.content %> - <%= comment.user.username %>
+       <%= button_to "X", {action: "delete", controller: "comments", id: comment.id}, method: "delete" %>
+    </li>
+  <% end %>
+</ol>
+
