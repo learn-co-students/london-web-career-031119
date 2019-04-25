@@ -1,0 +1,22 @@
+{
+  "books": [
+    {
+      "title": "Harry Potter and the Philisopher's Stone",
+      "desc": "Harry finds a shiny!",
+      "year": 1990,
+      "id": 1
+    },
+    {
+      "title": "Harry Potter and the Chamber of Secrets",
+      "desc": "Harry finds a chamber, and it has secrets! Oh, the secrets...",
+      "year": 1993,
+      "id": 2
+    },
+    {
+      "title": "Harry Potter and the Prisoner of Azkaban",
+      "desc": "Harry finds a prisoner, and he escaped from Azkaban.",
+      "year": 1995,
+      "id": 3
+    }
+  ]
+}
