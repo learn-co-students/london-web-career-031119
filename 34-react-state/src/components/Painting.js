@@ -13,7 +13,10 @@ const Painting = (props) =>
     </div>
     <div className="extra content">
     <a>
-      <i className="like icon"></i>
+      <i className="like icon" onClick={event => {
+        event.stopPropagation()
+        props.likePainting(props.painting.id)
+      }}></i>
       {props.painting.votes}
     </a>
   </div>
