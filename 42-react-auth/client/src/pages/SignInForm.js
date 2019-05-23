@@ -18,9 +18,7 @@ class SignInForm extends React.Component {
           alert(`Didn't work!: ${data.error}`)
         } else {
           // user is authenticated!
-          this.props.signin(this.state.username)
-          this.props.history.push('/inventory')
-          localStorage.setItem('token', data.id)
+          this.props.signin(this.state.username, data.token)
         }
       })
   }

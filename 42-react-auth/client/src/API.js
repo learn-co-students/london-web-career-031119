@@ -12,10 +12,16 @@ class API {
   }
 
   static validate () {
-    const id = localStorage.getItem('token')
+    const token = localStorage.getItem('token')
     return fetch(this.validateUrl, {
-	    headers: { Authorization: id },
+	    headers: { Authorization: token },
     }).then(resp => resp.json())
+  }
+
+  static getInventory () {
+    return fetch('http://localhost:3001/inventory', {
+      headers: { Authorization: localStorage.getItem('token') },
+    }).then(resp => resp.json())    
   }
 }
 

@@ -16,8 +16,11 @@ class App extends Component {
     username: ''
   }
 
-  signin = username => {
-    this.setState({ username })
+  signin = (username, token) => {
+    localStorage.setItem('token', token)
+    this.setState({ username }, () => {
+      this.props.history.push('/inventory')
+    })
   }
 
   signout = () => {
@@ -31,8 +34,7 @@ class App extends Component {
         if (data.error) {
           this.props.history.push('/signin')
         } else {
-          this.signin(data.username)
-          this.props.history.push('/inventory')
+          this.signin(data.username, localStorage.getItem('token'))
         }
       })
   }
