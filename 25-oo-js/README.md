@@ -15,7 +15,10 @@ In JavaScript, an object is a standalone entity, with properties and type. Compa
 {
     make: 'Tesla',
     model: 'S',
-    year: 2015
+    year: 2015,
+    drive () {
+        return `Vroom vroom, I'm a ${this.make} ${this.model}!`
+    }
 }
 
 // We can assign it to a variable for later use
