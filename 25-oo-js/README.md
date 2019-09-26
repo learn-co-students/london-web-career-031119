@@ -41,6 +41,9 @@ car.make
 car['make']
 "Tesla"
 
+car['ma' + 'ke']
+"Tesla"
+
 propertyName = 'make'
 car[propertyName]
 "Tesla"
