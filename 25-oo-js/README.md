@@ -169,15 +169,15 @@ true
 When you try to get the property of an object, if it does't have it, it will query its prototype, and if the prototype doesn't have it either, it will query its prototype, and so on until we run out of prototypes to check in the prototype chain.
 
 ```js
-const obj1 = { pen: 'fountain pen' }
-const obj2 = { __proto__: obj1 }
-const obj3 = { __proto__: obj2 }
-const obj4 = { __proto__: obj3 }
-const obj5 = { __proto__: obj4 }
+const student1 = { name: 'Dan', pen: 'fountain pen' }
+const student2 = { name: 'Hoots', __proto__: student1 }
+const student3 = { name: 'Charlie', __proto__: student2 }
+const student4 = { name: 'Nico', __proto__: student3 }
+const student5 = { name: 'Pigwig', __proto__: student4 }
 
 // If we query object 5 for a pen, the prototype chain
 // will eventually lead to object 1's pen.
-obj5.pen
+student5.pen
 "fountain pen"
 ```
 
